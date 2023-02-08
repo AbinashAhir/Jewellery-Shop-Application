@@ -1,66 +1,34 @@
 package com.jewellery.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Setter
+@Getter
 @Entity
+@ToString
 public class Feedback {
 	@Id
-	
-	private int customerId;
-	private String customerName;
-	private String productName;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "feedback_id")
+	private int feedbackId;
 	private String feedback;
 
-	public int getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-
-	public String getProductName() {
-		return productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-	public String getFeedback() {
-		return feedback;
-	}
-
-	public void setFeedback(String feedback) {
-		this.feedback = feedback;
-	}
-
-	@Override
-	public String toString() {
-		return "Feedback [customerId=" + customerId + ", customerName=" + customerName + ", productName=" + productName
-				+ ", feedback=" + feedback + "]";
-	}
-
-	public Feedback(int customerId, String customerName, String productName, String feedback) {
+	public Feedback(int feedbackId, String feedback) {
 		super();
-		this.customerId = customerId;
-		this.customerName = customerName;
-		this.productName = productName;
+		this.feedbackId = feedbackId;
 		this.feedback = feedback;
 	}
 
 	public Feedback() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
-	
-	}
+
+}
