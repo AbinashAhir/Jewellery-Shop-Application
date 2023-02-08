@@ -1,5 +1,7 @@
 package com.jewellery.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
@@ -10,7 +12,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Product {
+public class Product implements Serializable  {
+	
+	private static final long serialVersionUID = -3966420328222306500L;
+
 
 	@Id
 	public int productId;
