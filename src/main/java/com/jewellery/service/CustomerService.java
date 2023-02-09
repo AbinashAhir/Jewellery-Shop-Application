@@ -3,7 +3,7 @@ package com.jewellery.service;
 import java.util.List;
 
 import com.jewellery.entity.Product;
-import com.jewellery.entity.Registration;
+import com.jewellery.entity.User;
 
 public interface CustomerService {
 

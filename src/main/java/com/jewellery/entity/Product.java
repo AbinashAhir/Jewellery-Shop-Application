@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
@@ -21,53 +23,14 @@ public class Product implements Serializable  {
 
 
 	@Id
-	public int productId;
-	public String productName;
-	public String productMaterial;;
-	public double productWeight;
-	public double productGmPerWeight;
-	public int productQuantity;
-	public double productCost;
-
-	public Object getProductId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public Object getProductName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	public Product(int productId, String productName, String productMaterial, double productWeight,
-			double productGmPerWeight, int productQuantity, double productCost) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
-		
-		this.productMaterial = productMaterial;
-		this.productWeight = productWeight;
-		this.productGmPerWeight = productGmPerWeight;
-		this.productQuantity = productQuantity;
-		this.productCost = productCost;
-		
-	}
-
-
-	public Product() {
-		super();
-	}
-	
-	@OneToOne
-	public Feedback feedback;
-	
-	
-	 @ManyToOne
-	    private Purchase purchase;
-
-
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int productId;
+	private String productName;
+	private String productMaterial;;
+	private double productWeight;
+	private double productGmPerWeight;
+	private int productQuantity;
+	private double productCost;
 
 	
 

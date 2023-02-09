@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jewellery.entity.Registration;
+import com.jewellery.entity.User;
 import com.jewellery.service.RegistrationService;
 
 @RestController
@@ -15,13 +15,13 @@ public class UserController {
 	private RegistrationService rs;
 	
 
-	@GetMapping("/home")
+	@PostMapping("/register")
 	public String home() {
-		return "Home";
+		return "Registration";
 	}
 	
-	@PostMapping("/add")
-	public String add(@RequestBody Registration reg) {
+	@PostMapping("/login")
+	public String add(@RequestBody User reg) {
 		System.out.println(reg);
 		return rs.addReg(reg);
 	}

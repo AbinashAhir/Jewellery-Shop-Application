@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jewellery.entity.Product;
-import com.jewellery.entity.Registration;
+import com.jewellery.entity.User;
 import com.jewellery.repository.CustomerRepository;
 import com.jewellery.service.CustomerService;
 

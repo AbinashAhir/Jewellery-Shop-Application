@@ -1,6 +1,8 @@
 package com.jewellery.entity;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import jakarta.persistence.CascadeType;
@@ -21,63 +23,23 @@ import lombok.Setter;
 @Setter
 public class Purchase {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name= "purchase_id")
-	private int purchaseId;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name= "purchaseid")
+	private Long purchaseId;
 
-	public Purchase(int purchaseId) {
-		super();
-		this.purchaseId = purchaseId;
-	}
-
-	public Purchase() {
-		super();
-	
-	}
-	
-//	@Column(name = "purchase_date")
-//    private Date purchaseDate;
-
-    public int getPurchaseId() {
-		return purchaseId;
-	}
-
-	public void setPurchaseId(int purchaseId) {
-		this.purchaseId = purchaseId;
-	}
-
-	public List<Billing> getBillings() {
-		return billings;
-	}
-
-	public void setBillings(List<Billing> billings) {
-		this.billings = billings;
-	}
-
-	public List<Product> getProduct() {
-		return products;
-	}
-
-	public void setProduct(List<Product> product) {
-		this.products = product;
-	}
-
-	public Registration getRegistration() {
-		return registration;
-	}
-
-	public void setRegistration(Registration registration) {
-		this.registration = registration;
-	}
-
-	@OneToMany(mappedBy = "billing", cascade = CascadeType.ALL)
-    private List<Billing> billings;
-	
-    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
-    private List<Product> products;
+    private List<Long> quantity;
     
-    @ManyToOne
-    private Registration registration;
+    
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name="userid", referencedColumnName = "userId")
+    private User user;
+    
+    
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name="productid", referencedColumnName = "productId")
+    private Product product;
+    
+ 
 
 
 	
