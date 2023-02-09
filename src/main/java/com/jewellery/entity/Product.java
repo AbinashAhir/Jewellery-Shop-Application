@@ -2,8 +2,10 @@ package com.jewellery.entity;
 
 import java.io.Serializable;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -43,9 +45,15 @@ public class Product implements Serializable  {
 
 	public Product() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
+	@OneToOne
+	public Product product;
+	
+	
+	 @OneToOne(mappedBy = "product")
+	    private Purchase purchase;
+
 	
 
 }
