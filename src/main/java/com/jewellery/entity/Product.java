@@ -5,6 +5,7 @@ import java.io.Serializable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,19 +23,31 @@ public class Product implements Serializable  {
 	@Id
 	public int productId;
 	public String productName;
-	public String productmaterial;
+	public String productMaterial;;
 	public double productWeight;
 	public double productGmPerWeight;
 	public int productQuantity;
 	public double productCost;
+
+	public Object getProductId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public Object getProductName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
-	public Product(int productId, String productName, String productmaterial, double productWeight,
+	public Product(int productId, String productName, String productMaterial, double productWeight,
 			double productGmPerWeight, int productQuantity, double productCost) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
-		this.productmaterial = productmaterial;
+		
+		this.productMaterial = productMaterial;
 		this.productWeight = productWeight;
 		this.productGmPerWeight = productGmPerWeight;
 		this.productQuantity = productQuantity;
@@ -48,11 +61,13 @@ public class Product implements Serializable  {
 	}
 	
 	@OneToOne
-	public Product product;
+	public Feedback feedback;
 	
 	
-	 @OneToOne(mappedBy = "product")
+	 @ManyToOne
 	    private Purchase purchase;
+
+
 
 	
 

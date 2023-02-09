@@ -1,6 +1,7 @@
 package com.jewellery.entity;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -37,14 +38,49 @@ public class Purchase {
 //	@Column(name = "purchase_date")
 //    private Date purchaseDate;
 
-    @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
+    public int getPurchaseId() {
+		return purchaseId;
+	}
+
+	public void setPurchaseId(int purchaseId) {
+		this.purchaseId = purchaseId;
+	}
+
+	public List<Billing> getBillings() {
+		return billings;
+	}
+
+	public void setBillings(List<Billing> billings) {
+		this.billings = billings;
+	}
+
+	public List<Product> getProduct() {
+		return products;
+	}
+
+	public void setProduct(List<Product> product) {
+		this.products = product;
+	}
+
+	public Registration getRegistration() {
+		return registration;
+	}
+
+	public void setRegistration(Registration registration) {
+		this.registration = registration;
+	}
+
+	@OneToMany(mappedBy = "billing", cascade = CascadeType.ALL)
     private List<Billing> billings;
 	
-    @OneToOne
-    private Product product;
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
+    private List<Product> products;
     
     @ManyToOne
     private Registration registration;
+
+
+	
 
    
 }

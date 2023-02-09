@@ -14,48 +14,59 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class Billing {
+	
 	public double totalCost;
 	@Id
 	public int billno;
-	
-	 @ManyToOne(fetch = FetchType.LAZY)
-	    @JoinColumn(name = "fk_purchase_id")
-	    private Purchase purchase;
-	 
-	 
-	public Billing() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_purchase_id")
+	private Purchase purchase;
+
 	public int customerId;
-	public Billing(double totalCost, int billno, int customerId) {
-		super();
-		this.totalCost = totalCost;
-		this.billno = billno;
-		this.customerId = customerId;
-	}
+	
+	public List<Product> products;
+
 	public double getTotalCost() {
 		return totalCost;
 	}
+
 	public void setTotalCost(double totalCost) {
 		this.totalCost = totalCost;
 	}
+
 	public int getBillno() {
 		return billno;
 	}
+
 	public void setBillno(int billno) {
 		this.billno = billno;
 	}
+
+	public Purchase getPurchase() {
+		return purchase;
+	}
+
+	public void setPurchase(Purchase purchase) {
+		this.purchase = purchase;
+	}
+
 	public int getCustomerId() {
 		return customerId;
 	}
+
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
-	@Override
-	public String toString() {
-		return "Billing [totalCost=" + totalCost + ", billno=" + billno + ", customerId=" + customerId + "]";
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 	
 	
+
 }
