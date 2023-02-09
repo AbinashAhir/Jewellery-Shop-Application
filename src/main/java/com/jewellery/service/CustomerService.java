@@ -1,14 +1,20 @@
 package com.jewellery.service;
 
+import java.util.List;
+
 import com.jewellery.entity.Product;
 import com.jewellery.entity.Registration;
 
 public interface CustomerService {
-//	public String addReg(Registration reg);
-	public String addp(Product product);
-	  public Product getProductId(int productId); 
-//	  public Product getProductName( String productName);
-//		
-		
+
+	public Product getAllProductByProductId(Integer productId);
+	public Product getAllProductByProductName(String productName);
+	public List<Product> getAllProduct();
+	public Product getProduct(String productName);
+	public Product getFeedbackByProductName(String productName);
+
+	
+	
+	
 	
 }

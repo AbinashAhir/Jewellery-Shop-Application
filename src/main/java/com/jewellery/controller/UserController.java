@@ -10,7 +10,7 @@ import com.jewellery.entity.Registration;
 import com.jewellery.service.RegistrationService;
 
 @RestController
-public class AdminController {
+public class UserController {
 	@Autowired
 	private RegistrationService rs;
 	
