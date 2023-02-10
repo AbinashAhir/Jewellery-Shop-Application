@@ -3,11 +3,13 @@ package com.jewellery.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.jewellery.repository.AdminRepository;
 import com.jewellery.service.AdminService;
 import com.jewellery.user.User;
 
+@Service
 public class AdminServiceImpl implements AdminService{
 
 	@Autowired

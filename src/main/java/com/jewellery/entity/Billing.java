@@ -31,16 +31,12 @@ public class Billing {
 private  long id;
 
 @OneToOne(cascade = CascadeType.PERSIST)
-<<<<<<< HEAD
 @JoinColumn(name="userid", referencedColumnName ="id" )
-=======
-@JoinColumn(name="userid", referencedColumnName ="userId" )
->>>>>>> 5225fdaae083df5ebbdfdb74541dbd0da7ab0f06
 private User user;
 
 
 @OneToOne(cascade = CascadeType.PERSIST)
-@JoinColumn(name="purchaseid", referencedColumnName = "purchaseId")
+@JoinColumn(name="purchaseid", referencedColumnName = "purchaseid")
 private Purchase purchase;
 	
 

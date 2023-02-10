@@ -1,9 +1,14 @@
 package com.jewellery.service;
 
 import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.jewellery.user.User;
 
-public interface AdminService {
+
+public interface AdminService{
 	public String addVendor(User user);
 
 	List<User> getAllUser();
