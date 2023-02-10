@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.jewellery.entity.Product;
-import com.jewellery.entity.Registration;
+import com.jewellery.user.User;
 
 public interface CustomerRepository extends JpaRepository<Product ,Integer > {
 

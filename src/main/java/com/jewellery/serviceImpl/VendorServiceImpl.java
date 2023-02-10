@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.jewellery.entity.Billing;
 import com.jewellery.entity.Product;
 import com.jewellery.entity.Purchase;
-import com.jewellery.entity.Registration;
+import com.jewellery.user.User;
 import com.jewellery.repository.PurchaseRepository;
 import com.jewellery.repository.RegistrationRepository;
 import com.jewellery.repository.VendorRepository;

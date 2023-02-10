@@ -1,5 +1,7 @@
 package com.jewellery.entity;
 
+import com.jewellery.user.User;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,28 +21,23 @@ import lombok.ToString;
 @ToString
 public class Feedback {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "feedback_id")
-	private int feedbackId;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name = "feedbackid")
+   private long id;
+	
+	
 	private String feedback;
-
-	public Feedback(int feedbackId, String feedback) {
-		super();
-		this.feedbackId = feedbackId;
-		this.feedback = feedback;
-	}
-
-	public Feedback() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="fk_product_id")
-	public Product product;
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name="userid", referencedColumnName = "id")
+	private User user;
 	
-	    @OneToOne
-	    private Registration registration;
-
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name="productid", referencedColumnName = "productId")
+	private Product product;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name="purchaseid",referencedColumnName = "purchaseId")
+	private Purchase purchase;
 
 }

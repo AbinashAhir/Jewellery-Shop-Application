@@ -3,7 +3,7 @@ package com.jewellery.serviceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jewellery.entity.Registration;
+import com.jewellery.user.User;
 import com.jewellery.repository.RegistrationRepository;
 import com.jewellery.service.RegistrationService;
 
@@ -14,7 +14,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 	private RegistrationRepository rp;
 	
 	@Override
-	public String addReg(Registration reg) {
+	public String addReg(User reg) {
 		rp.save(reg);
 		return "Added Successfully";
 	}

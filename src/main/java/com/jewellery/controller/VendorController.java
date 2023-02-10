@@ -17,7 +17,7 @@ import com.jewellery.entity.Product;
 import com.jewellery.service.VendorService;
 
 @RestController
-@RequestMapping("/vendor")
+@RequestMapping("/api/v1/vendor")
 public class VendorController {
 
 	@Autowired

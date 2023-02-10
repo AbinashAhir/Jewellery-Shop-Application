@@ -15,12 +15,16 @@ import com.jewellery.repository.CustomerRepository;
 import com.jewellery.service.CustomerService;
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/api/v1/customer")
 public class CustomerController {
 	
 	@Autowired
 	private CustomerService cs;
 	
+	@GetMapping("/home")
+	public String home() {
+		return "Hey home";
+	}
 	
 	 
 	@GetMapping("/search/{productName}")
@@ -28,9 +32,9 @@ public class CustomerController {
 		return cs.getAllProductByProductName(productName);
 	}
 	
-	@GetMapping("/search/{productId}")
-	public Product getAllProductByProductId(@PathVariable("productId") Integer productId){
-		return cs.getAllProductByProductId(productId);
+	@GetMapping("/search/{productid}")
+	public Product getAllProductByProductId(@PathVariable("productid") Integer productid){
+		return cs.getAllProductByProductId(productid);
 	}
 	
 	@GetMapping("/view")
