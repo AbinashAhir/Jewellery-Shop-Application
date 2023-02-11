@@ -29,15 +29,14 @@ public class Purchase {
 	@Column(name= "purchaseid")
 	private Long purchaseId;
 
-    private List<Long> quantity;
+    private Long quantity;
     
     
     @OneToOne(cascade = CascadeType.PERSIST)
-<<<<<<< HEAD
+
+   
+
     @JoinColumn(name="userid", referencedColumnName = "id")
-=======
-    @JoinColumn(name="userid", referencedColumnName = "userId")
->>>>>>> 5225fdaae083df5ebbdfdb74541dbd0da7ab0f06
     private User user;
     
     

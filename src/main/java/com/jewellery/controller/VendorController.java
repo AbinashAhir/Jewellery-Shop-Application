@@ -29,8 +29,8 @@ public class VendorController {
 	}
 
 	@PutMapping("/update")
-	public String updateProduct(@RequestBody Product pd) {
-		return vs.updateProduct(pd);
+	public String updateProduct(@RequestBody Product product) {
+		return vs.updateProduct(product);
 	}
 
 	@DeleteMapping("/delete")

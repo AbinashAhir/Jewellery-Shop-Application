@@ -10,7 +10,7 @@ import com.jewellery.entity.Product;
 public interface VendorService {
 	
 	public String addProduct(Product pd);
-	public String updateProduct(Product pd);
+	public String updateProduct(Product product);
 	public String deleteProduct(Product pd);
 	public Billing getBillingById(Integer customerId, Integer purchaseId);
 	

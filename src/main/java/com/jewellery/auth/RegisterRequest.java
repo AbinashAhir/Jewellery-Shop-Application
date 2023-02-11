@@ -1,6 +1,8 @@
 package com.jewellery.auth;
 
 
+import com.jewellery.user.Role;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,5 +20,6 @@ public class RegisterRequest {
   private String password;
   private long phonenumber;
   private String address;
+  private Role role;
   
 }

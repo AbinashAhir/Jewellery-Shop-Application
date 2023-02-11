@@ -2,6 +2,7 @@ package com.jewellery.serviceImpl;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -11,11 +12,9 @@ import org.springframework.stereotype.Service;
 import com.jewellery.entity.Billing;
 import com.jewellery.entity.Product;
 import com.jewellery.entity.Purchase;
-<<<<<<< HEAD
+
 import com.jewellery.user.User;
-=======
-import com.jewellery.entity.User;
->>>>>>> 5225fdaae083df5ebbdfdb74541dbd0da7ab0f06
+import com.jewellery.repository.ProductRepository;
 import com.jewellery.repository.PurchaseRepository;
 import com.jewellery.repository.RegistrationRepository;
 import com.jewellery.repository.VendorRepository;
@@ -26,6 +25,9 @@ public class VendorServiceImpl implements VendorService {
 
 	@Autowired
 	private VendorRepository vp;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	@Autowired
 	private RegistrationRepository rp;
@@ -40,15 +42,50 @@ public class VendorServiceImpl implements VendorService {
 	}
 
 	@Override
-	public String updateProduct(Product pd) {
-		vp.save(pd);
-		return "Product Updated";
+	public String updateProduct(Product product) {
+		Product productId = productRepository.findById(product.getProductId()).get();
+
+		if (Objects.nonNull(product.getProductId())) {
+
+			productId.setProductId(product.getProductId());
+		}
+
+		
+		if(Objects.nonNull(product.getProductName()) && !"".equalsIgnoreCase(product.getProductName())) {
+			productId.setProductName(product.getProductName());
+		}
+
+		if (Objects.nonNull(product.getProductMaterial()) && !"".equalsIgnoreCase(product.getProductMaterial())) {
+			productId.setProductMaterial(product.getProductMaterial());
+		}
+		
+		if(Objects.nonNull(product.getProductWeight())) {
+			productId.setProductWeight(product.getProductWeight());
+		}
+		
+		if(Objects.nonNull(product.getProductGmPerWeight())) {
+			productId.setProductGmPerWeight(product.getProductGmPerWeight());
+		}
+		
+		if(Objects.nonNull(product.getProductQuantity())) {
+			productId.setProductQuantity(product.getProductQuantity());
+		}
+		
+		if(Objects.nonNull(product.getProductCost())) {
+			productId.setProductCost(product.getProductCost());
+		}
+
+		vp.save(productId);
+
+		return productId.getProductName() + " updated successfully";
 	}
 
 	@Override
-	public String deleteProduct(Product pd) {
-		vp.delete(pd);
-		return "Product Deleted";
+	public String deleteProduct(Product product) {
+		Product productId = productRepository.findById(product.getProductId()).get();
+		var temp=productId.getProductName().toString();
+		productRepository.deleteById(productId.getProductId());
+		return temp+" Product Deleted";
 	}
 
 	@Override
