@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.security.crypto.password.PasswordEncoder;
+=======
+>>>>>>> e075f88f93be9e01e69cff58b959e981f385dccc
 import org.springframework.stereotype.Service;
 
 import com.jewellery.auth.AuthenticationService;
@@ -14,7 +17,11 @@ import com.jewellery.user.User;
 import com.jewellery.user.UserRepository;
 
 @Service
+<<<<<<< HEAD
 public class AdminServiceImpl implements AdminService {
+=======
+public class AdminServiceImpl implements AdminService{
+>>>>>>> e075f88f93be9e01e69cff58b959e981f385dccc
 
 	@Autowired
 	private AdminRepository ar;

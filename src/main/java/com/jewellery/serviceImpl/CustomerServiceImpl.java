@@ -9,12 +9,20 @@ import org.springframework.stereotype.Service;
 
 import com.jewellery.entity.Feedback;
 import com.jewellery.entity.Product;
+<<<<<<< HEAD
 import com.jewellery.entity.Purchase;
 import com.jewellery.user.User;
 import com.jewellery.user.UserRepository;
 import com.jewellery.repository.FeedbackRepository;
 import com.jewellery.repository.ProductRepository;
 import com.jewellery.repository.PurchaseRepository;
+=======
+
+import com.jewellery.user.User;
+
+
+import com.jewellery.repository.CustomerRepository;
+>>>>>>> e075f88f93be9e01e69cff58b959e981f385dccc
 import com.jewellery.service.CustomerService;
 
 @Service

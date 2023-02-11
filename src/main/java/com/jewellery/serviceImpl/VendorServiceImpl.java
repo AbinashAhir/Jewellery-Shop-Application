@@ -14,7 +14,12 @@ import com.jewellery.entity.Product;
 import com.jewellery.entity.Purchase;
 
 import com.jewellery.user.User;
+<<<<<<< HEAD
 import com.jewellery.repository.ProductRepository;
+=======
+
+
+>>>>>>> e075f88f93be9e01e69cff58b959e981f385dccc
 import com.jewellery.repository.PurchaseRepository;
 import com.jewellery.repository.RegistrationRepository;
 import com.jewellery.repository.VendorRepository;

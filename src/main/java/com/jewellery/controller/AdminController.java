@@ -1,8 +1,11 @@
 package com.jewellery.controller;
 
+<<<<<<< HEAD
 import com.jewellery.auth.AuthenticationResponse;
 import com.jewellery.auth.AuthenticationService;
 import com.jewellery.auth.RegisterRequest;
+=======
+>>>>>>> e075f88f93be9e01e69cff58b959e981f385dccc
 import com.jewellery.service.AdminService;
 import com.jewellery.service.RegistrationService;
 import com.jewellery.user.User;
@@ -20,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/admin")
 public class AdminController {
+	
 	@Autowired
 	private AuthenticationService service;
 	

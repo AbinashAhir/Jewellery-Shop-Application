@@ -5,7 +5,11 @@ import java.util.Optional;
 
 import com.jewellery.entity.Feedback;
 import com.jewellery.entity.Product;
+<<<<<<< HEAD
 import com.jewellery.entity.Purchase;
+=======
+
+>>>>>>> e075f88f93be9e01e69cff58b959e981f385dccc
 import com.jewellery.user.User;
 
 
